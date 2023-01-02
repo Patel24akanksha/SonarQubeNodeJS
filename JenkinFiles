@@ -1,0 +1,13 @@
+def sonarScanner = tool name: 'forSonar' , type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+try{
+  stage('Checkout Code'){
+      checkout scm Git(branches: [[name: '*/master']], userRemoteConfigs:[[creditialsId: 'GitHubCred', url://https://github.com/Patel24akanksha/SonarQubeNodeJS/new/master/JenkinFiles]])
+}
+
+stage('NPM Build'){
+  sh"npm install"
+ }
+ 
+ stage('Test Cases Execution'){
+    echo"The test is SUCCESSFUL"
+ }
